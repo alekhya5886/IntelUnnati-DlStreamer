@@ -103,11 +103,15 @@ gvametaconvert ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=fakesin
 
 ---
 
-##  Authors
+##  Team Members
 
-- *PVB Adithya* [CSE - AIML, GITAM University] - [vprata2@gitam.in]  
-- *Alekhya Madiraju* [CSE - AIML, GITAM University] - [amadiraj2@gitam.in]
+- [*PVB Adithya*](https://github.com/pvba-py)  
+  CSE - AIML, GITAM University  
+   vprata2@gitam.in
 
+- [*Alekhya Madiraju*](https://github.com/alekhya5886)  
+  CSE - AIML, GITAM University  
+   amadiraj2@gitam.in
 ---
 
 ##  License
