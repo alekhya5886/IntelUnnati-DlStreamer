@@ -4,7 +4,7 @@ This project uses pre-trained models from the OpenVINO™ Model Zoo. Download li
 
 ---
 
-## 🎯 Detection Models
+##  Detection Models
 
 ### 1. [face-detection-0205](https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/face-detection-0205)
 - *Type*: Face Detection
@@ -23,7 +23,7 @@ This project uses pre-trained models from the OpenVINO™ Model Zoo. Download li
 
 ---
 
-## 👤 Face Re-Identification
+##  Face Re-Identification
 
 ### 4. [face-reidentification-retail-0095](https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/face-reidentification-retail-0095)
 - *Type*: Face Re-Identification
@@ -32,7 +32,7 @@ This project uses pre-trained models from the OpenVINO™ Model Zoo. Download li
 
 ---
 
-## 🙂 Emotion Recognition
+##  Emotion Recognition
 
 ### 5. [emotions-recognition-retail-0003](https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/emotions-recognition-retail-0003)
 - *Type*: Emotion Classification
@@ -41,7 +41,7 @@ This project uses pre-trained models from the OpenVINO™ Model Zoo. Download li
 
 ---
 
-## 📊 Age & Gender Classification
+##  Age & Gender Classification
 
 ### 6. [age-gender-recognition-retail-0013](https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/age-gender-recognition-retail-0013)
 - *Type*: Age and Gender Classification
@@ -50,7 +50,7 @@ This project uses pre-trained models from the OpenVINO™ Model Zoo. Download li
 
 ---
 
-## 📦 Download Instructions
+##  Download Instructions
 
 To download all models manually using the OpenVINO downloader tool:
 
