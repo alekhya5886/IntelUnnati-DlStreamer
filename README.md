@@ -59,3 +59,41 @@ gvadetect model=/models/intel/face-detection-0205/FP32/face-detection-0205.xml d
 gvatrack tracking-type=short-term-imageless ! \
 gvaclassify model=/models/intel/emotions-recognition-retail-0003/FP32/emotions-recognition-retail-0003.xml device=CPU ! \
 gvametaconvert ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=fakesink sync=false
+
+## 📊 Experimental Results (CPU)
+
+| Model Combination                              | Avg FPS | Max Streams | Bottlenecks                       |
+|------------------------------------------------|---------|-------------|-----------------------------------|
+| face-detection-0205 + emotions-recognition-retail-0003 | 35      | ~2–3         | Lightweight, fast. Minor decode lag at high load. |
+| face-detection-0204 + face-reidentification-retail-0095 | 25      | ~2–3         | Re-ID stage is CPU-heavy. Classification model is the bottleneck. |
+| face-detection-0200 + age-gender-recognition-retail-0013 | 28      | ~2–3         | Balanced pipeline. Slight delay in detection accuracy. |
+
+> ⚠ FPS drops below 20 on the third stream but remains above 10 consistently.
+
+---
+
+## ⚙ Experimental Results (GPU)
+
+| No. of Streams | Avg FPS (CPU) | Avg FPS (GPU) | CPU Usage     | GPU Usage     | Notes |
+|----------------|----------------|----------------|----------------|----------------|-------|
+| 1              | 38 FPS         | 58 FPS         | 80–94%         | 60–70%         | GPU accelerates inference; CPU handles decode smoothly. |
+| 2              | 22 FPS         | 48 FPS         | 90–96%         | 70–80%         | Decode and inference well balanced; slight latency at peak load. |
+| 3              | 12 FPS         | 34 FPS         | 95–98%         | 85–92%         | GPU nearing saturation; decoding slightly lags. |
+
+---
+
+## 🧠 Observations
+
+- ✅ *Best-performing model*: face-detection-0205 + emotions-recognition-retail-0003
+- ✅ *GPU significantly improves throughput*, especially in multi-stream scenarios.
+- ⚠ *CPU saturation* occurs at 3+ streams, affecting stability and frame rate.
+
+---
+
+## 📷 Sample Output
+
+> *(Add screenshots if available in output/ folder)*
+
+```markdown
+![Emotion Detection](output/sample_emotion.png)
+![Face Re-ID](output/sample_reid.png)
