@@ -6,6 +6,23 @@ This project builds a real-time video pipeline (Decode → Detect → Classify) 
 > *Built with Intel® DL Streamer, OpenVINO™ Toolkit, and GStreamer*
 
 ---
+## 📚 Table of Contents
+
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Hardware & Software Setup](#-hardware--software-setup)
+- [Pipeline Architecture](#-pipeline-architecture)
+- [Model Combinations Evaluated](#-model-combinations-evaluated)
+- [Sample GStreamer Pipeline](#-sample-gstreamer-pipeline-cpu)
+- [Experimental Results](#-experimental-results-cpu)
+- [GPU Performance](#-gpu-performance-results)
+- [Observations](#-observations)
+- [Screenshots](#-sample-output-optional)
+- [Project Structure](#-project-structure)
+- [How to Run](#-how-to-run)
+- [Download Models](#-download-models)
+- [Authors](#-authors)
+- [License](#-license)
 
 ##  Overview
 
