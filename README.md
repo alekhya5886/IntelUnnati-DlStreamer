@@ -1,26 +1,26 @@
 # IntelUnnati-DlStreamer
 This project builds a real-time video pipeline (Decode → Detect → Classify) using Intel DL Streamer on CPU and GPU. It evaluates performance to find the optimal FPS, stream count, and best detection/classification models for Intel hardware.
-# 🧠 Real-Time Video Analytics using Intel DL Streamer
+#  Real-Time Video Analytics using Intel DL Streamer
 
 > Face Detection · Emotion Recognition · Face Re-identification  
 > *Built with Intel® DL Streamer, OpenVINO™ Toolkit, and GStreamer*
 
 ---
 
-## 📌 Overview
+##  Overview
 
 This project implements a real-time, GStreamer-based video pipeline (Decode → Detect → Classify) using Intel® DL Streamer on both CPU and GPU. It aims to evaluate how efficiently Intel hardware can support multiple video streams and AI models for edge inference. The goal: determine optimal FPS, stream support, and best model combinations.
 
 ---
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 > Create a pipeline (Decode → Detect → Classify) on Intel hardware (CPU and GPU),  
 > run it across multiple streams, and evaluate FPS and performance for different model pairs.
 
 ---
 
-## 💻 Hardware & Software Setup
+##  Hardware & Software Setup
 
 | Component        | Details |
 |------------------|---------|
@@ -34,13 +34,13 @@ This project implements a real-time, GStreamer-based video pipeline (Decode → 
 
 ---
 
-## 🧱 Pipeline Architecture
+##  Pipeline Architecture
 ![WhatsApp Image 2025-07-01 at 19 24 53_6e637713](https://github.com/user-attachments/assets/f0c7914e-4979-4183-8060-28467d9f39bf)
 > Each component uses DL Streamer GStreamer plugins. Output is logged with performance stats.
 
 ---
 
-## 🔍 Model Combinations Evaluated
+##  Model Combinations Evaluated
 
 | Detection Model        | Classification Model                  | Purpose               |
 |------------------------|----------------------------------------|------------------------|
@@ -50,7 +50,7 @@ This project implements a real-time, GStreamer-based video pipeline (Decode → 
 
 ---
 
-## ▶ Sample GStreamer Pipeline (CPU)
+##  Sample GStreamer Pipeline (CPU)
 
 ```bash
 gst-launch-1.0 -v filesrc location=/data/crowd.mp4 ! decodebin ! videoconvert ! videoscale ! \
@@ -61,7 +61,7 @@ gvaclassify model=/models/intel/emotions-recognition-retail-0003/FP32/emotions-r
 gvametaconvert ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=fakesink sync=false
 ```
 
-## 📊 Experimental Results (CPU)
+##  Experimental Results (CPU)
 
 | Model Combination                              | Avg FPS | Max Streams | Bottlenecks                       |
 |------------------------------------------------|---------|-------------|-----------------------------------|
@@ -69,11 +69,11 @@ gvametaconvert ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=fakesin
 | face-detection-0204 + face-reidentification-retail-0095 | 25      | ~2–3         | Re-ID stage is CPU-heavy. Classification model is the bottleneck. |
 | face-detection-0200 + age-gender-recognition-retail-0013 | 28      | ~2–3         | Balanced pipeline. Slight delay in detection accuracy. |
 
-> ⚠ FPS drops below 20 on the third stream but remains above 10 consistently.
+>  FPS drops below 20 on the third stream but remains above 10 consistently.
 
 ---
 
-## ⚙ Experimental Results (GPU)
+##  Experimental Results (GPU)
 
 | No. of Streams | Avg FPS (CPU) | Avg FPS (GPU) | CPU Usage     | GPU Usage     | Notes |
 |----------------|----------------|----------------|----------------|----------------|-------|
@@ -83,18 +83,22 @@ gvametaconvert ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=fakesin
 
 ---
 
-## 🧠 Observations
+##  Observations
 
-- ✅ *Best-performing model*: face-detection-0205 + emotions-recognition-retail-0003
-- ✅ *GPU significantly improves throughput*, especially in multi-stream scenarios.
-- ⚠ *CPU saturation* occurs at 3+ streams, affecting stability and frame rate.
+-  *Best-performing model*: face-detection-0205 + emotions-recognition-retail-0003
+-  *GPU significantly improves throughput*, especially in multi-stream scenarios.
+-  *CPU saturation* occurs at 3+ streams, affecting stability and frame rate.
 
 ---
 
-## 📷 Sample Output
+##  Authors
 
-> *(Add screenshots if available in output/ folder)*
+- *PVB Adithya* [CSE - AIML, GITAM University] - [vprata2@gitam.in]  
+- *Alekhya Madiraju* [CSE - AIML, GITAM University] - [amadiraj2@gitam.in]
 
-```markdown
-![Emotion Detection](output/sample_emotion.png)
-![Face Re-ID](output/sample_reid.png)
+---
+
+##  License
+
+This project is licensed under the [MIT License](LICENSE).  
+Feel free to use, modify, and distribute with attribution.
