@@ -5,24 +5,23 @@ This project builds a real-time video pipeline (Decode → Detect → Classify) 
 > Face Detection · Emotion Recognition · Face Re-identification  
 > *Built with Intel® DL Streamer, OpenVINO™ Toolkit, and GStreamer*
 
----
-## 📚 Table of Contents
+##  Table of Contents
 
-- [Overview](##Overview)
-- [Problem Statement](#-problem-statement)
-- [Hardware & Software Setup](#-hardware--software-setup)
-- [Pipeline Architecture](#-pipeline-architecture)
-- [Model Combinations Evaluated](#-model-combinations-evaluated)
-- [Sample GStreamer Pipeline](#-sample-gstreamer-pipeline-cpu)
-- [Experimental Results](#-experimental-results-cpu)
-- [GPU Performance](#-gpu-performance-results)
-- [Observations](#-observations)
-- [Screenshots](#-sample-output-optional)
-- [Project Structure](#-project-structure)
-- [How to Run](#-how-to-run)
-- [Download Models](#-download-models)
-- [Authors](#-authors)
-- [License](#-license)
+- [Overview](#overview)
+- [Problem Statement](#problem-statement)
+- [Hardware & Software Setup](#hardware--software-setup)
+- [Pipeline Architecture](#pipeline-architecture)
+- [Model Combinations Evaluated](#model-combinations-evaluated)
+- [Sample GStreamer Pipeline (CPU)](#sample-gstreamer-pipeline-cpu)
+- [Experimental Results (CPU)](#experimental-results-cpu)
+- [GPU Performance Results](#gpu-performance-results)
+- [Observations](#observations)
+- [Sample Output (Optional)](#sample-output-optional)
+- [Project Structure](#project-structure)
+- [How to Run](#how-to-run)
+- [Download Models](#download-models)
+- [Authors](#authors)
+- [License](#license)
 
 ##  Overview
 
