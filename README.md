@@ -8,7 +8,7 @@ This project builds a real-time video pipeline (Decode → Detect → Classify) 
 ---
 ## 📚 Table of Contents
 
-- [Overview](#-overview)
+- [Overview](##--Overview)
 - [Problem Statement](#-problem-statement)
 - [Hardware & Software Setup](#-hardware--software-setup)
 - [Pipeline Architecture](#-pipeline-architecture)
