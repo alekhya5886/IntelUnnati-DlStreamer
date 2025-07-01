@@ -36,3 +36,26 @@ This project implements a real-time, GStreamer-based video pipeline (Decode → 
 
 ## 🧱 Pipeline Architecture
 ![WhatsApp Image 2025-07-01 at 19 24 53_6e637713](https://github.com/user-attachments/assets/f0c7914e-4979-4183-8060-28467d9f39bf)
+> Each component uses DL Streamer GStreamer plugins. Output is logged with performance stats.
+
+---
+
+## 🔍 Model Combinations Evaluated
+
+| Detection Model        | Classification Model                  | Purpose               |
+|------------------------|----------------------------------------|------------------------|
+| face-detection-0205    | emotions-recognition-retail-0003       | Emotion classification |
+| face-detection-0204    | face-reidentification-retail-0095      | Face re-identification |
+| face-detection-0200    | age-gender-recognition-retail-0013     | Age & gender analysis  |
+
+---
+
+## ▶ Sample GStreamer Pipeline (CPU)
+
+```bash
+gst-launch-1.0 -v filesrc location=/data/crowd.mp4 ! decodebin ! videoconvert ! videoscale ! \
+video/x-raw,width=640,height=480 ! \
+gvadetect model=/models/intel/face-detection-0205/FP32/face-detection-0205.xml device=CPU ! \
+gvatrack tracking-type=short-term-imageless ! \
+gvaclassify model=/models/intel/emotions-recognition-retail-0003/FP32/emotions-recognition-retail-0003.xml device=CPU ! \
+gvametaconvert ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=fakesink sync=false
