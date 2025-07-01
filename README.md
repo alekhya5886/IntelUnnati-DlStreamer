@@ -35,3 +35,4 @@ This project implements a real-time, GStreamer-based video pipeline (Decode → 
 ---
 
 ## 🧱 Pipeline Architecture
+![WhatsApp Image 2025-07-01 at 19 24 53_6e637713](https://github.com/user-attachments/assets/f0c7914e-4979-4183-8060-28467d9f39bf)
