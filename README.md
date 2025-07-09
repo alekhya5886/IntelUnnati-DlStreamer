@@ -16,7 +16,7 @@ This project builds a real-time video pipeline (Decode → Detect → Classify) 
 - [Experimental Results (CPU)](#experimental-results-cpu)
 - [GPU Performance Results](#experimental-results-gpu)
 - [Observations](#observations)
-- [Authors](#authors)
+- [Authors](#team-members)
 - [License](#license)
 
 ##  Overview
